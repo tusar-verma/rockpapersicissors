@@ -7,16 +7,24 @@
     </head>
     <body>
         <div id="content">
-            <div id="scoreContainer">
-                <div id="playerScore"></div>
-                <div id="computerScore"></div>
+            <div class="score">
+                <div class= "scoreTittle">Player</div>                
+                <div class= "scoreValue">
+                    <span id="playerScore">0</span>
+                </div>
             </div>
-            <div id="buttonsContainer">            
+            <div id="midContainer">            
                 <button id="Rock" type="button">Rock</button>
                 <button id="Paper" type="button">Paper</button>
                 <button id="Scissors" type="button">Scissors</button>
+                <div id="result"></div>
             </div>
-            <span id="result"></span>
+            <div class="score">
+                <div class= "scoreTittle">Computer</div>                
+                <div class= "scoreValue">
+                    <span id="computerScore">0</span>
+                </div>
+            </div>
         </div>
         <script src="script.js"></script>
     </body>

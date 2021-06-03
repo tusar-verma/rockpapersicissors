@@ -11,7 +11,7 @@ button {
 
 #content {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     height: 100%;
     align-items: center;
@@ -19,13 +19,29 @@ button {
 
 #result {
     height: 20px;
-    width: 368px;
+    width: 350px;
     border: 2px solid black;
     text-align: center;
     padding: 0.2em;
     margin: auto;
+    margin-top:100px;
 }
 
 #buttonsContainer {
     margin: auto;
+}
+
+.score{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    flex-grow: 1;
+    align-self: stretch;
+}
+
+.scoreValue {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

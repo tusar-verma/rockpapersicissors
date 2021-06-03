@@ -44,6 +44,7 @@ Array.from(btns).forEach((btn) => {
     })
 })
 
+
 // function game(){
 //     for (let index = 0; index < 5; index++) {
 //         let playerSelection = "";
