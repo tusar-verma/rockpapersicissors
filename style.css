@@ -1,0 +1,31 @@
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+button {
+    padding: 1em;
+    width: 100px;
+    margin: 0 10px;
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+}
+
+#result {
+    height: 20px;
+    width: 368px;
+    border: 2px solid black;
+    text-align: center;
+    padding: 0.2em;
+    margin: auto;
+}
+
+#buttonsContainer {
+    margin: auto;
+}

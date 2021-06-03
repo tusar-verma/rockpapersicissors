@@ -1,4 +1,7 @@
 const gameValues = ["ROCK", "PAPER", "SCISSORS"];
+let playerMove = null;
+let playerScore = 0;
+let computerScore = 0;
 
 function computerPlay(){    
     return gameValues[Math.floor(Math.random()* gameValues.length)];    
@@ -33,14 +36,21 @@ function playRound(playerSelection, computerSelection){
     }
     return result;
 }
+const btns = document.querySelectorAll("button");
+const result = document.querySelector("#result");
+Array.from(btns).forEach((btn) => {
+    btn.addEventListener("click", (e) => {        
+        result.textContent = playRound(e.target.id,computerPlay());
+    })
+})
 
-function game(){
-    for (let index = 0; index < 5; index++) {
-        let playerSelection = "";
-        while (!gameValues.includes(playerSelection.toUpperCase())) {
-            playerSelection = prompt("Rock, Paper or Scissors?");
-        }
-        let computerSelection = computerPlay();
-        console.log(playRound(playerSelection, computerSelection));
-    }
-}
+// function game(){
+//     for (let index = 0; index < 5; index++) {
+//         let playerSelection = "";
+//         while (!gameValues.includes(playerSelection.toUpperCase())) {
+//             playerSelection = prompt("Rock, Paper or Scissors?");
+//         }
+//         let computerSelection = computerPlay();
+//         console.log(playRound(playerSelection, computerSelection));
+//     }
+// }
