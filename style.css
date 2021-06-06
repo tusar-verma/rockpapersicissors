@@ -1,12 +1,24 @@
 html, body {
     margin: 0;
     height: 100%;
+    font-family: "Press Start 2P", Georgia;
+    background-color: black;
 }
 
 button {
-    padding: 1em;
-    width: 100px;
-    margin: 0 10px;
+    font-family: "Press Start 2P", Georgia;
+    width: 130px;
+    padding: 0.5em;
+    margin: 0 5px;
+    background-color: black;
+    color: aliceblue;
+    border: 2px solid white;
+}
+button:hover {
+    color: rgb(66, 135, 245);
+}
+button:active{
+    border-color: rgb(66, 135, 245);
 }
 
 #content {
@@ -18,11 +30,12 @@ button {
 }
 
 #result {
-    height: 20px;
+    height: 30px;
     width: 350px;
-    border: 2px solid black;
+    border: 2px solid white;
+    color:aliceblue;
     text-align: center;
-    padding: 0.2em;
+    padding: 1em;
     margin: auto;
     margin-top:100px;
 }
@@ -37,6 +50,7 @@ button {
     text-align: center;
     flex-grow: 1;
     align-self: stretch;
+    margin:10px;
 }
 
 .scoreValue {
@@ -44,4 +58,12 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 7em;
+}
+.scoreValue, .scoreTittle {
+    padding: 10px;
+    color: blue;
+}
+.scoreTittle {
+    font-size: 2em;
 }

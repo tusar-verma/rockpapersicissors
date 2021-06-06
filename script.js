@@ -1,57 +1,68 @@
 const gameValues = ["ROCK", "PAPER", "SCISSORS"];
 let playerMove = null;
-let playerScore = 0;
-let computerScore = 0;
 
 function computerPlay(){    
     return gameValues[Math.floor(Math.random()* gameValues.length)];    
 }
 
+function addPoint(player){
+    const scoreElement = player ? document.querySelector("#player") :
+                                  document.querySelector("#computer");
+    const result = document.querySelector("#result");
+    score = Number(scoreElement.textContent) +1;
+    scoreElement.textContent = score;
+    if (score == 5) {
+        result.textContent = `Winner: ${scoreElement.id}`;
+        resetGame();
+    }
+}
+
+function resetGame(){
+    const scores = document.querySelectorAll(".scoreValue");
+    scores.forEach(score => {
+        score.firstElementChild.textContent = "0";
+    });
+}
+
 function playRound(playerSelection, computerSelection){
-    playerSelection = playerSelection.toUpperCase();
-    let result = "";
+    const result = document.querySelector("#result");
+    playerSelection = playerSelection.toUpperCase();    
+
     if (playerSelection == computerSelection) {
-        result = "Tie!"
+        result.textContent = "Tie!"
     } else if (playerSelection == "ROCK") {
         if (computerSelection == "PAPER"){
-            result = "You Lose! Paper beats Rock";
+            result.textContent = "You Lose! Paper beats Rock";
+            addPoint(false);
         }
         if (computerSelection == "SCISSORS"){
-            result = "You win! Rock beats Scissors";
+            result.textContent = "You win! Rock beats Scissors";
+            addPoint(true);
         }
     } else if (playerSelection == "PAPER"){
         if (computerSelection == "ROCK"){
-            result = "You win! Paper beats Rock";
+            result.textContent = "You win! Paper beats Rock";
+            addPoint(true);
         }
         if (computerSelection == "SCISSORS"){
-            result = "You Lose! Scissors beats Paper";
+            result.textContent = "You Lose! Scissors beats Paper";
+            addPoint(false);
         }
     } else if (playerSelection == "SCISSORS"){
         if (computerSelection == "PAPER"){
-            result = "You win! Scissors beats Paper";
+            result.textContent = "You win! Scissors beats Paper";
+            addPoint(true);
         }
         if (computerSelection == "ROCK"){
-            result = "You Lose! Scissors beats Rock";
+            result.textContent = "You Lose! Rock beats Scissors";
+            addPoint(false);
         }
     }
-    return result;
 }
 const btns = document.querySelectorAll("button");
-const result = document.querySelector("#result");
 Array.from(btns).forEach((btn) => {
     btn.addEventListener("click", (e) => {        
-        result.textContent = playRound(e.target.id,computerPlay());
+        playRound(e.target.id,computerPlay());
     })
 })
 
-
-// function game(){
-//     for (let index = 0; index < 5; index++) {
-//         let playerSelection = "";
-//         while (!gameValues.includes(playerSelection.toUpperCase())) {
-//             playerSelection = prompt("Rock, Paper or Scissors?");
-//         }
-//         let computerSelection = computerPlay();
-//         console.log(playRound(playerSelection, computerSelection));
-//     }
-// }
